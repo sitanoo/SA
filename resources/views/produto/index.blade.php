@@ -277,11 +277,11 @@
             <!-- Page wrapper  -->
             <!-- ============================================================== -->
             <div class="page-wrapper">
-                
+
                 <!-- ============================================================== -->
                 <!-- Bread crumb and right sidebar toggle -->
                 <!-- ============================================================== -->
-                
+
                 <!-- Conteúdo  -->
 
                 <div class="col-12" style="padding-left: 10px;">
@@ -301,7 +301,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                
+
                                 @foreach ($produto as $p)
                                 <tr>
                                     <th scope="col">{{$p->ProCod}}</th>
@@ -310,8 +310,13 @@
                                         <a href="{{route('produto.edit', $p->ProCod)}}" type="button" class="btn btn-outline-info">Editar</a>
                                     </th>
                                     <th scope="col">
-                                        <a href="#" type="button" class="btn btn-outline-danger">Excluir</a>
+                                        <a href="#" onclick="return delProduto('del{{$p->ProCod}}',{{route('produto.destroy', $p->ProCod)}})" type="button" class="btn btn-outline-danger">Excluir</a>
+                                        <form action="" method="post" id="del{{$p->ProCod}}">
+                                            @csrf
+                                            @method('DELETE')
+                                        </form>
                                     </th>
+
                                 </tr>
                                 @endforeach
                             </tbody>
