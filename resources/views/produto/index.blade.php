@@ -292,22 +292,28 @@
                         <table class="table">
                             <thead>
                                 <tr>
+                                    <th scope="col">Código</th>
+                                    <th scope="col">Nome</th>
                                     <th scope="col">
-                                        <a href="#" type="button" class="btn btn-outline-success">Adicionar Produto</a>
+                                        <a href="{{route('produto.create')}}" type="button" class="btn btn-outline-success">Adicionar Produto</a>
                                     </th>
+                                    <th scope="col"></th>
                                 </tr>
                             </thead>
                             <tbody>
+                                
+                                @foreach ($produto as $p)
                                 <tr>
-                                    <th scope="col">* ID *</th>
-                                    <th scope="col">* Nome do produto *</th>
+                                    <th scope="col">{{$p->ProCod}}</th>
+                                    <th scope="col">{{$p->ProNom}}</th>
                                     <th scope="col">
-                                        <a href="#" type="button" class="btn btn-outline-info">Editar</a>
+                                        <a href="{{route('produto.edit', $p->ProCod)}}" type="button" class="btn btn-outline-info">Editar</a>
                                     </th>
                                     <th scope="col">
                                         <a href="#" type="button" class="btn btn-outline-danger">Excluir</a>
                                     </th>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

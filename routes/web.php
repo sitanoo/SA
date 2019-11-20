@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'IndexController@index');
-Route::get('/cronometragem', 'CronometragemController@index');
+Route::get('/produto', 'ProdutoController@index');
 
 //CRUDS
 Route::resource('operacao', 'OperacaoController');
