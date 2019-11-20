@@ -12,7 +12,6 @@
 */
 
 Route::get('/', 'IndexController@index');
-Route::get('/usuario', 'UsuarioController@index');
 Route::get('/cronometragem', 'CronometragemController@index');
 
 //CRUDS
