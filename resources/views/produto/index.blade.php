@@ -2,6 +2,7 @@
 @section('conteudo')
 <!-- Conteúdo  -->
 
+
 <script>
                     
     function delProduto(id, url){

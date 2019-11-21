@@ -41,6 +41,8 @@
                     <div class="col-sm-9">
                         <input type="text" class="form-control" name="ProNom" value="{{$produto->ProNom}}">
                     </div>
+                    
+                    
                 </div>
                 <div class="border-top">
                     <div class="card-body">
