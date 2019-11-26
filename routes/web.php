@@ -13,10 +13,13 @@
 
 Route::get('/', 'IndexController@index');
 Route::get('/produto', 'ProdutoController@index');
+Route::get('/cronometragem', 'CronometragemController@index');
+Route::get('/tomadatempo', 'TomadaTempoController@index');
+
 
 //CRUDS
 Route::resource('operacao', 'OperacaoController');
 Route::resource('usuario', 'UsuarioController');
 Route::resource('sequencia', 'SequenciaController');
-Route::resource('tomada-tempo', 'TomadaTempoController');
+Route::resource('tomadatempo', 'TomadaTempoController');
 Route::resource('produto', 'ProdutoController');
