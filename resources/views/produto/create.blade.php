@@ -40,7 +40,7 @@
             @csrf
             
             
-            <div class="card-body" id="formCreate" onsubmit="return editProduto('{{ route('produto.store') }}')">
+            <div class="card-body" id="formCreate" onsubmit="return createProduto('{{ route('produto.store') }}')">
                 <div class="form-group row">
                     <label for="nompro" class="col-sm-3 text-left control-label col-form-label">Nome do Produto</label>
                     <div class="col-sm-9">
