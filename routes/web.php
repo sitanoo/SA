@@ -12,11 +12,11 @@
 */
 
 Route::get('/', 'IndexController@index');
-Route::get('/produto', 'ProdutoController@index');
-Route::get('/operacao', 'OperacaoController@index');
-Route::get('/usuario', 'UsuarioController@index');
+Route::get('/produto', 'ProdutoController@index')->name("produto.index");
+Route::get('/operacao', 'OperacaoController@index')->name("operacao.index");
+Route::get('/usuario', 'UsuarioController@index')->name("usuario.index");
 Route::get('/tomadaTempo', 'TomadaTempoController@index');
-Route::get('/sequencia', 'SequenciaController@index');
+Route::get('/sequencia', 'SequenciaController@index')->name("sequencia.index");
 
 //CRUDS
 Route::resource('operacao', 'OperacaoController');

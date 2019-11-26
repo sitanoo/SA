@@ -24,58 +24,58 @@
 </script>
 
 
-<div class="col-12" style="padding-left: 1px;">
+<div class="main-content col-12" style="padding-left: 10px;">
     <div class="card">
         <div class="card-body bg-dark">
-            <h5 class="card-title m-b-0 text-light"><i class="mdi mdi-shopping"></i>Editar Operação</h5>
+            <h5 class="card-title m-b-0 text-light"><i class="mdi mdi-shopping"></i>Editar Usuário</h5>
         </div>
     </div>
-    <!-- Form -->
-    <form class="form-horizontal m-t-20" action="" onsubmit="return editUsuario('{{ route('usuario.update', $usuario->UsuCod) }}')>
-        @csrf
+    <div class="card">
+        <form class="form-horizontal" id="formEdit" action="" onsubmit="return editUsuario('{{ route('usuario.update', $usuario->UsuCod) }}')">
+
+            @csrf
             @method('patch')
-        
-        <div class="row p-b-30">
-            <div class="col-12">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text bg-success text-white" id="basic-addon1"><i class="ti-user"></i></span>
-                    </div>
-                    <input type="text" class="form-control form-control-lg" placeholder="Código operação" aria-label="Username" aria-describedby="basic-addon1" required>
-                </div>
-                <!-- email -->
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text bg-danger text-white" id="basic-addon1"><i class="ti-email"></i></span>
-                    </div>
-                    <input type="text" class="form-control form-control-lg" placeholder="Nome operação" aria-label="Username" aria-describedby="basic-addon1" required>
-                </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text bg-info text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
-                    </div>
-                    <input type="text" class="form-control form-control-lg" placeholder="Maquina de operação" aria-label="text" aria-describedby="basic-addon1" required>
-                </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text bg-warning text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
-                    </div>
-                    <input type="text" class="form-control form-control-lg" placeholder="Tempo operação" aria-label="text" aria-describedby="basic-addon1" required>
-                </div>
 
-
-            </div>
-        </div>
-        <div class="row border-top border-secondary">
-            <div class="col-12">
-                <div class="form-group">
-                    <div class="p-t-20">
-                        <button class="btn btn-block btn-lg btn-info" type="submit">Editar</button>
+            <div class="card-body">
+                
+                <div class="form-group row">
+                    <label for="usutip" class="col-sm-3 text-left control-label col-form-label">Tipo de usuário</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="usuTip" value="{{$usuario->UsuTip}}">
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <label for="usuname" class="col-sm-3 text-left control-label col-form-label">Nome da Conta</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="usuName" value="{{$usuario->UsuName}}">
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <label for="usunom" class="col-sm-3 text-left control-label col-form-label">Nome</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" name="usuNom" value="{{$usuario->UsuNom}}">
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <label for="ususen" class="col-sm-3 text-left control-label col-form-label">Senha</label>
+                    <div class="col-sm-9">
+                        <input type="password" class="form-control" name="usuSen" value="{{$usuario->UsuSen}}">
+                    </div>
+                </div>
+                
+                <div class="border-top">
+                    <div class="card-body">
+                        <button type="submit" class="btn btn-success">Editar</button>
                     </div>
                 </div>
             </div>
-        </div>
-    </form>
+        </form>
+
+    </div>
+
 </div>
 
 

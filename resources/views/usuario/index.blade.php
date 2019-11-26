@@ -31,25 +31,32 @@
 </script>
 
 
-<div class="col-12" style="padding-left: 10px;">
+<div class="main-content col-12" style="padding-left: 10px;">
     <div class="card">
         <div class="card-body bg-dark">
-            <h5 class="card-title m-b-0 text-light"><i class="mdi mdi-shopping"></i> Usuários</h5>
+            <h5 class="card-title m-b-0 text-light"><i class="mdi mdi-account"></i> Usuários</h5>
         </div>
         <table class="table">
             <thead>
                 <tr>
+                    <th scope="col">Código</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Nome da Conta</th>
+                    <th scope="col">Tipo</th>
                     <th scope="col">
-                        <a href="{{route('usuario.create')}}" type="button" class="btn btn-outline-success">Adicionar Usuario</a>
+                        <a href="{{route('usuario.create')}}" type="button" class="btn btn-outline-success">Adicionar Usuário</a>
                     </th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
 
-                @foreach ($usuario as $u);
+                 @foreach ($usuario as $u)
+
                 <tr id="linhadel{{$u->UsuCod}}">
-                    <th scope="col" >{{$u->UsuNom}}</th>
-                    <th >{{$u->UsuName}}</th>
+                    <th scope="col">{{$u->UsuCod}}</th>
+                    <th scope="col">{{$u->UsuNom}}</th>
+                    <th scope="col">{{$u->UsuName}}</th>
                     <th scope="col">{{$u->UsuTip}}</th>
                     <th scope="col">
                         <a href="{{route('usuario.edit', $u->UsuCod)}}" type="button" class="btn btn-outline-info">Editar</a>
