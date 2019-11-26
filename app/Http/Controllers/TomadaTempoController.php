@@ -13,7 +13,8 @@ class TomadaTempoController extends Controller
      */
     public function index()
     {
-        //
+        $tomtemp = \App\TomadaTempo::get();
+        return view('tomadatempo.index', compact('tomtemp'));
     }
 
     /**
@@ -23,7 +24,7 @@ class TomadaTempoController extends Controller
      */
     public function create()
     {
-        //
+        return view('tomadatempo.create');
     }
 
     /**
@@ -34,7 +35,17 @@ class TomadaTempoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tomtemp = new \App\TomadaTempo();
+       
+        $tomtemp->TomDat = $request->get('TomDat');
+        $tomtemp->TomTurno = $request->get('TomTurno');
+        $tomtemp->OpCod = $request->get('OpCod');
+        $tomtemp->ProCod = $request->get('ProCod');
+        $tomtemp->TomNumlei = $request->get('TomNumLei');
+        $tomtemp->TomOpe = $request->get('TomOpe');
+        $tomtemp->TomObs = $request->get('TomObs');
+        $tomtemp->save();
+        return "true";
     }
 
     /**
@@ -56,7 +67,9 @@ class TomadaTempoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $tomtemp = \App\Produto::find($id);
+        return view('tomadatempo.edit', compact('tomtemp'));
+
     }
 
     /**
@@ -68,7 +81,18 @@ class TomadaTempoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $tomtemp = \App\Produto::find($id);
+        
+        $tomtemp->TomDat = $request->get('TomDat');
+        $tomtemp->TomTurno = $request->get('TomTurno');
+        $tomtemp->OpCod = $request->get('OpCod');
+        $tomtemp->ProCod = $request->get('ProCod');
+        $tomtemp->TomNumlei = $request->get('TomNumLei');
+        $tomtemp->TomOpe = $request->get('TomOpe');
+        $tomtemp->save();
+        return "true";
+        
     }
 
     /**
@@ -79,6 +103,10 @@ class TomadaTempoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+        $tomtemp = \App\Produto::find($id);
+        $tomtemp->delete();
+        return "true";
+        
     }
 }
