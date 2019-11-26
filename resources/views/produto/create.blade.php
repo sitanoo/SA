@@ -6,27 +6,23 @@
 
     function createProduto(url) {
 
-            dados = $('#formCreate').serialize();
-
-            $.ajax({
-                method: 'post',
-                url: url,
-                data: dados,
-                dataType: 'html',
-                success: function (data) {
-                    //Mensagem de sucesso
-                    location.href='/produto';
-                },
-                error: function (argument) {
-                    //Mensagem de erro
-                    alert('Produto não adicionado');
-                }
-            });
-
-        }
-
-        return false;
-        
+    dados = $('#formCreate').serialize();
+    $.ajax({
+    method: 'post',
+            url: url,
+            data: dados,
+            dataType: 'html',
+            success: function (data) {
+            //Mensagem de sucesso
+            location.href = '/produto';
+            },
+            error: function (argument) {
+            //Mensagem de erro
+            alert('Produto não adicionado');
+            }
+    });
+    return false;
+    }
 </script>
 <div class="main-content col-12" style="padding-left: 10px;">
     <div class="card">
@@ -36,16 +32,16 @@
     </div>
 
     <div class="card">
-        <form class="form-horizontal">
-            
+        <form class="form-horizontal" id="formCreate" onsubmit="return createProduto('{{ route('produto.store') }}')">
+
             @csrf
-            
-            
-            <div class="card-body" id="formCreate" onsubmit="return createProduto('{{ route('produto.store') }}')">
+
+
+            <div class="card-body">
                 <div class="form-group row">
                     <label for="nompro" class="col-sm-3 text-left control-label col-form-label">Nome do Produto</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" name="ProNom" value="{{$produto->ProNom}}">
+                        <input type="text" class="form-control" name="ProNom" value="">
                     </div>
                 </div>
                 <div class="border-top">
@@ -53,8 +49,8 @@
                         <button type="submit" class="btn btn-success">Adicionar</button>
                     </div>
                 </div>
-                </div>
+            </div>
         </form>
-</div>
+    </div>
 </div>
 @stop            
