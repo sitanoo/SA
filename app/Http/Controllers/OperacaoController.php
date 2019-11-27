@@ -13,7 +13,7 @@ class OperacaoController extends Controller
      */
     public function index()
     {
-        //
+        return view('operacao.index');
     }
 
     /**
@@ -23,7 +23,7 @@ class OperacaoController extends Controller
      */
     public function create()
     {
-        //
+       return view('operacao.create');
     }
 
     /**
@@ -34,7 +34,7 @@ class OperacaoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
@@ -56,7 +56,7 @@ class OperacaoController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('operacao.edit');
     }
 
     /**
