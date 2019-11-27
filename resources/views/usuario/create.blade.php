@@ -1,7 +1,28 @@
 @extends('layout')
 @section('conteudo')
 
+<script>
 
+    function createUsuario(url) {
+
+    dados = $('#formCreate').serialize();
+    $.ajax({
+    method: 'post',
+            url: url,
+            data: dados,
+            dataType: 'html',
+            success: function (data) {
+            //Mensagem de sucesso
+            location.href = '/usuario';
+            },
+            error: function (argument) {
+            //Mensagem de erro
+            alert('Usuario não adicionado');
+            }
+    });
+    return false;
+    }
+</script>
 
 <div class="col-12" style="padding-left: 1px;">
     <div class="card">
@@ -10,39 +31,42 @@
         </div>
     </div>
     <!-- Form -->
-    <form class="form-horizontal m-t-20" action="index.html">
+    <form class="form-horizontal m-t-20" id="formCreate" onsubmit="return createUsuario('{{ route('usuario.store') }}')">
+        
+        @csrf
+        
         <div class="row p-b-30">
             <div class="col-12">
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text bg-success text-white" id="basic-addon1"><i class="ti-user"></i></span>
                     </div>
-                    <input type="text" class="form-control form-control-lg" placeholder="Nome" aria-label="Username" aria-describedby="basic-addon1" required>
+                    <input type="text" class="form-control form-control-lg" name="usuName" placeholder="Nome" aria-describedby="basic-addon1" required>
                 </div>
                 <!-- email -->
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text bg-danger text-white" id="basic-addon1"><i class="ti-email"></i></span>
                     </div>
-                    <input type="text" class="form-control form-control-lg" placeholder="Nome Usuário" aria-label="Username" aria-describedby="basic-addon1" required>
+                    <input type="text" class="form-control form-control-lg" name="usuNom" placeholder="Nome Usuário" aria-describedby="basic-addon1" required>
                 </div>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text bg-info text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
                     </div>
-                    <input type="text" class="form-control form-control-lg" placeholder="Tipo" aria-label="text" aria-describedby="basic-addon1" required>
+                    <input type="text" class="form-control form-control-lg" name="UsuTip" placeholder="Tipo" aria-describedby="basic-addon1" required>
                 </div>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text bg-warning text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
                     </div>
-                    <input type="text" class="form-control form-control-lg" placeholder="Senha" aria-label="Password" aria-describedby="basic-addon1" required>
+                    <input type="text" class="form-control form-control-lg" name="UsuSen" placeholder="Senha" aria-describedby="basic-addon1" required>
                 </div>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <span class="input-group-text bg-warning text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
                     </div>
-                    <input type="text" class="form-control form-control-lg" placeholder="Confirmar Senha" aria-label="Password" aria-describedby="basic-addon1" required>
+                    <input type="text" class="form-control form-control-lg" name="UsuTip" placeholder="Confirmar Senha" aria-describedby="basic-addon1" required>
                 </div>
 
             </div>

@@ -1,6 +1,27 @@
 @extends('layout')
 @section('conteudo')
 
+<script>
+    function editUsuario(url) {
+
+    dados = $('#formEdit').serialize();
+    $.ajax({
+    method: 'post',
+            url: url,
+            data: dados,
+            dataType: 'html',
+            success: function (data) {
+            //Mensagem de sucesso
+            location.href = '/usuario';
+            },
+            error: function (argument) {
+            //Mensagem de erro
+            alert('Usuario não Alterado');
+            }
+    });
+    return false
+    }
+</script>
 
 
 <div class="col-12" style="padding-left: 1px;">
@@ -10,7 +31,10 @@
         </div>
     </div>
     <!-- Form -->
-    <form class="form-horizontal m-t-20" action="index.html">
+    <form class="form-horizontal m-t-20" action="" onsubmit="return editUsuario('{{ route('usuario.update', $usuario->UsuCod) }}')>
+        @csrf
+            @method('patch')
+        
         <div class="row p-b-30">
             <div class="col-12">
                 <div class="input-group mb-3">

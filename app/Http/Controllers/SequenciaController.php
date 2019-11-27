@@ -13,7 +13,8 @@ class SequenciaController extends Controller
      */
     public function index()
     {
-        return view('sequencia.index');
+        $sequencia = \App\Sequencia::get();
+        return view('sequencia.index', compact('sequencia'));
     }
 
     /**
@@ -34,7 +35,19 @@ class SequenciaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $sequencia = new \App\Sequencia();
+        
+        $sequencia->SeqNom = $request->get('SeqNom');
+            $sequencia->OpCod = $request->get('OpCod');
+          $sequencia->ProCod = $request->get('ProCod');
+           $sequencia->SeqRit = $request->get('SeqRit');
+           $sequencia->SeqInt = $request->get('SeqInt');
+           $sequencia->SeqCon = $request->get('SeqCon');
+           $sequencia->SeqQtdVez = $request->get('SeqQtdVez');
+           $sequencia->SeqPorPec = $request->get('SeqPorPec');
+           
+        $sequencia->save();
+        return "true";
     }
 
     /**
@@ -56,7 +69,8 @@ class SequenciaController extends Controller
      */
     public function edit($id)
     {
-       return view('sequencia.edit');
+       $usuario = \App\Usuario::find($id);
+        return view('usuario.edit', compact('usuario'));
     }
 
     /**
