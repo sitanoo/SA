@@ -2,91 +2,105 @@
 @section('conteudo')
 
 
+<script>
+    function editSequencia(url) {
 
-<div class="col-12" style="padding-left: 1px;">
+    dados = $('#formEdit').serialize();
+    $.ajax({
+    method: 'post',
+            url: url,
+            data: dados,
+            dataType: 'html',
+            success: function (data) {
+            //Mensagem de sucesso
+            location.href = '/sequencia';
+            },
+            error: function (argument) {
+            //Mensagem de erro
+            alert('Sequência não Alterada');
+            }
+    });
+    return false
+    }
+</script>
+<div class="main-content col-12" style="padding-left: 10px;">
     <div class="card">
         <div class="card-body bg-dark">
-            <h5 class="card-title m-b-0 text-light"><i class="mdi mdi-shopping"></i>Editar Sequencia</h5>
+            <h5 class="card-title m-b-0 text-light"><i class="mdi mdi-pencil"></i>Editar Sequência</h5>
         </div>
     </div>
-    <!-- Form -->
-    <form class="form-horizontal m-t-20" action="index.html">
-        <div class="row p-b-30">
-            <div class="col-12">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text bg-success text-white" id="basic-addon1"><i class="ti-user"></i></span>
-                    </div>
-                    <input type="text" class="form-control form-control-lg" placeholder="Codigo Sequencia" aria-label="codTempo" aria-describedby="basic-addon1" required>
-                </div>
-                <!-- email -->
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text bg-danger text-white" id="basic-addon1"><i class="ti-email"></i></span>
-                    </div>
-                    <input type="text" class="form-control form-control-lg" placeholder="Nome sequencia" aria-label="nomSeq" aria-describedby="basic-addon1" required>
-                </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text bg-warning text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
-                    </div>
-                    <input type="text" class="form-control form-control-lg" placeholder="Código operação" aria-label="codOpe" aria-describedby="basic-addon1" required>
-                </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text bg-info text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
-                    </div>
-                    <input type="text" class="form-control form-control-lg" placeholder="Codigo produto" aria-label="codPro" aria-describedby="basic-addon1" required>
-                </div>
+    <div class="card">
+        <form class="form-horizontal" id="formEdit" action="" onsubmit="return editSequencia('{{ route('sequencia.update', $seq->SeqCod) }}')">
 
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text bg-info text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
-                    </div>
-                    <input type="text" class="form-control form-control-lg" placeholder="Ritimo sequencia" aria-label="ritSeq" aria-describedby="basic-addon1" required>
-                </div>
+            @csrf
+            @method('patch')
 
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text bg-info text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
+            <div class="card-body">
+                <div class="form-group row">
+                    <label for="SeqNom" class="col-sm-3 text-left control-label col-form-label">Nome da Sequência</label>
+                    <div class="col-sm-9">
+                        <input type="text" value="{{$seq->SeqNom}}" name="SeqNom" required>
                     </div>
-                    <input type="text" class="form-control form-control-lg" placeholder="Seqint" aria-label="numTop" aria-describedby="basic-addon1" required>
-                </div>
-
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text bg-info text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
-                    </div>
-                    <input type="text" class="form-control form-control-lg" placeholder="SeqCon" aria-label="ope" aria-describedby="basic-addon1" required>
-                </div>
-
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text bg-info text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
-                    </div>
-                    <input type="text" class="form-control form-control-lg" placeholder="Quantidade de sequencias" aria-label="qnSeq" aria-describedby="basic-addon1" required>
                 </div>
                 
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text bg-info text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
-                    </div>
-                    <input type="text" class="form-control form-control-lg" placeholder="Sequencia por seg" aria-label="seqSeg" aria-describedby="basic-addon1" required>
-                </div>
-            </div>
-        </div>
-        <div class="row border-top border-secondary">
-            <div class="col-12">
-                <div class="form-group">
-                    <div class="p-t-20">
-                        <button class="btn btn-block btn-lg btn-info" type="submit">Editar</button>
+                <div class="form-group row">
+                    <label for="Oppro" class="col-sm-3 text-left control-label col-form-label">Código operação</label>
+                    <div class="col-sm-9">
+                         <input type="text" value="{{$seq->OpCod}}" name="OpCod"required>
                     </div>
                 </div>
+                
+                <div class="form-group row">
+                    <label for="ProCod" class="col-sm-3 text-left control-label col-form-label">Código produto</label>
+                    <div class="col-sm-9">
+                        <input type="text"  value="{{$seq->ProCod}}" name="ProCod" name="ProCod">
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <label for="SeqRit" class="col-sm-3 text-left control-label col-form-label">Ritimo</label>
+                    <div class="col-sm-9">
+                        <input type="text"  value="{{$seq->SeqRit}}" name="SeqRit" name="SeqRit">
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <label for="SeqCon" class="col-sm-3 text-left control-label col-form-label">Sequência Con.</label>
+                    <div class="col-sm-9">
+                        <input type="text" value="{{$seq->SeqCon}}" name="SeqCon" name="SeqCon">
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <label for="SeqQtdVez" class="col-sm-3 text-left control-label col-form-label">Quantidade de vezes</label>
+                    <div class="col-sm-9">
+                        <input type="text"  value="{{$seq->SeqQtdVez}}" name="SeqQtdVez" name="SeqQtdVez">
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <label for="SeqInt" class="col-sm-3 text-left control-label col-form-label">Intervalo de Sequência</label>
+                    <div class="col-sm-9">
+                        <input type="text"  value="{{$seq->SeqInt}}" name="SeqInt" name="SeqInt">
+                    </div>
+                </div>
+                
+                <div class="form-group row">
+                    <label for="SeqInt" class="col-sm-3 text-left control-label col-form-label">Sequência por peça</label>
+                    <div class="col-sm-9">
+                        <input type="text"  value="{{$seq->SeqPorPec}}" name="SeqPorPec" name="SeqporPec">
+                    </div>
+                </div>
+                
+                <div class="border-top">
+                    <div class="card-body">
+                        <button type="submit" class="btn btn-success">Editar</button>
+                    </div>
+                </div>
             </div>
-        </div>
-    </form>
+        </form>
+
+    </div>
+
 </div>
-
-
-
-@stop
+@stop   

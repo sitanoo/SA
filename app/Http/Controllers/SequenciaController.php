@@ -1,9 +1,6 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-
 class SequenciaController extends Controller
 {
     /**
@@ -13,9 +10,11 @@ class SequenciaController extends Controller
      */
     public function index()
     {
-        //
-    }
 
+        $seq = \App\Sequencia::get();
+        return view('sequencia.index', compact('seq'));
+
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -23,9 +22,8 @@ class SequenciaController extends Controller
      */
     public function create()
     {
-        //
+        return view('sequencia.create');
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -34,9 +32,23 @@ class SequenciaController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
 
+        $seq = new \App\Sequencia();
+       
+        $seq->SeqNom = $request->get('SeqNom');
+        $seq->OpCod = $request->get('OpCod');
+        $seq->ProCod = $request->get('ProCod');
+        $seq->SeqRit = $request->get('SeqRit');
+        $seq->SeqInt = $request->get('SeqInt');
+        $seq->SeqCon = $request->get('SeqCon');
+        $seq->SeqQtdVez = $request->get('SeqQtdVez');
+        $seq->SeqPorPec = $request->get('SeqPorPec');
+        $seq->save();
+
+        $sequencia = new \App\Sequencia();
+
+        return "true";
+    }
     /**
      * Display the specified resource.
      *
@@ -47,7 +59,6 @@ class SequenciaController extends Controller
     {
         //
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -56,9 +67,9 @@ class SequenciaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $seq = \App\Sequencia::find($id);
+        return view('sequencia.edit', compact('seq'));
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -68,9 +79,21 @@ class SequenciaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
+        $seq = \App\Sequencia::find($id);
+       
+        $seq->SeqNom = $request->get('SeqNom');
+        $seq->OpCod = $request->get('OpCod');
+        $seq->ProCod = $request->get('ProCod');
+        $seq->SeqRit = $request->get('SeqRit');
+        $seq->SeqInt = $request->get('SeqInt');
+        $seq->SeqCon = $request->get('SeqCon');
+        $seq->SeqQtdVez = $request->get('SeqQtdVez');
+        $seq->SeqPorPec = $request->get('SeqPorPec');
+        $seq->save();
+        return "true";
+        
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -79,6 +102,10 @@ class SequenciaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+        $seq = \App\Sequencia::find($id);
+        $seq->delete();
+        return "true";
+        
     }
 }

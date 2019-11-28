@@ -67,8 +67,7 @@
                         
                         <a href="{{route('operacao.edit', $o->ProCod)}}" 
                            type="button" class="btn btn-outline-info"><i class="fa fa-pencil-alt"></i></a>
-                        <a href="#" onclick="return delOperacao('del{{$o->OpCod}}',\n\
-                           '{{route('operacao.destroy', $o->OpCod)}}')" 
+                        <a href="" onclick="return delOperacao('del{{$o->OpCod}}', '{{route('operacao.destroy', $o->OpCod)}}')" 
                            type="button" class="btn btn-outline-danger"><i class="fa fa-trash-alt"></i></a>
                            
                         <form action="" method="post" id="del{{$o->OpCod}}">

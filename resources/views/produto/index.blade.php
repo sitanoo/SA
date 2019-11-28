@@ -24,7 +24,7 @@
                 },
                 error: function (argument){
                     //Mensagem de erro
-                    alert('Produto não eliminado');
+                    alert('Produto não eliminado (Elimine a operação relacionada a este produto para eliminá-lo")');
                 }
             });
 
@@ -36,6 +36,9 @@
 </script>
 
 <div class="main-content col-12" style="padding-left: 10px;">
+    <a href="{{route('produto.create')}}" type="button" class="btn btn-outline-success">Adicionar Produto</a>
+    <br>
+    <br>
     <div class="card">
         <div class="card-body bg-dark">
             <h5 class="card-title m-b-0 text-light"><i class="mdi mdi-shopping"></i> Produtos</h5>
@@ -45,9 +48,6 @@
                 <tr>
                     <th scope="col">Código</th>
                     <th scope="col">Nome</th>
-                    <th scope="col">
-                        <a href="{{route('produto.create')}}" type="button" class="btn btn-outline-success">Adicionar Produto</a>
-                    </th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -62,7 +62,7 @@
                         <a href="{{route('produto.edit', $p->ProCod)}}" type="button" class="btn btn-outline-info">Editar</a>
                     </th>
                     <th scope="col">
-                        <a href="#" onclick="return delProduto('del{{$p->ProCod}}', '{{route('produto.destroy', $p->ProCod)}}')" type="button" class="btn btn-outline-danger">Excluir</a>
+                        <a href="" onclick="return delProduto('del{{$p->ProCod}}', '{{route('produto.destroy', $p->ProCod)}}')" type="button" class="btn btn-outline-danger">Excluir</a>
                         <form action="" method="post" id="del{{$p->ProCod}}">
                             @csrf
                             @method('DELETE')
