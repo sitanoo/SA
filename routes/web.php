@@ -14,7 +14,7 @@
 Route::get('/', 'IndexController@index');
 Route::get('/produto', 'ProdutoController@index');
 Route::get('/cronometragem', 'CronometragemController@index');
-Route::get('/tomadatempo', 'TomadaTempoController@index');
+Route::get('/sequencia', 'SequenciaController@index');
 
 
 //CRUDS

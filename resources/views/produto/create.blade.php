@@ -14,7 +14,7 @@
             dataType: 'html',
             success: function (data) {
             //Mensagem de sucesso
-            location.href = '/produto';
+            location.href = '/sequencia';
             },
             error: function (argument) {
             //Mensagem de erro
