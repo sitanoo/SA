@@ -1,6 +1,7 @@
 @extends('layout')
 @section('conteudo')
 
+
 <script>
 
     function createSequencia(url) {
