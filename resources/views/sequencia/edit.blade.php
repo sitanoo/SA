@@ -17,7 +17,7 @@
             },
             error: function (argument) {
             //Mensagem de erro
-            alert('Produto não Alterado');
+            alert('Sequência não Alterada');
             }
     });
     return false

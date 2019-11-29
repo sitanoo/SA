@@ -69,7 +69,6 @@ class TomadaTempoController extends Controller
     {
         $tomtemp = \App\Produto::find($id);
         return view('tomadatempo.edit', compact('tomtemp'));
-
     }
 
     /**

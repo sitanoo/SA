@@ -10,8 +10,10 @@ class SequenciaController extends Controller
      */
     public function index()
     {
+
         $seq = \App\Sequencia::get();
         return view('sequencia.index', compact('seq'));
+
     }
     /**
      * Show the form for creating a new resource.
@@ -30,6 +32,7 @@ class SequenciaController extends Controller
      */
     public function store(Request $request)
     {
+
         $seq = new \App\Sequencia();
        
         $seq->SeqNom = $request->get('SeqNom');
@@ -41,6 +44,9 @@ class SequenciaController extends Controller
         $seq->SeqQtdVez = $request->get('SeqQtdVez');
         $seq->SeqPorPec = $request->get('SeqPorPec');
         $seq->save();
+
+        $sequencia = new \App\Sequencia();
+
         return "true";
     }
     /**

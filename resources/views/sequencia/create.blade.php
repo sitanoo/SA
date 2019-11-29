@@ -17,7 +17,7 @@
             },
             error: function (argument) {
             //Mensagem de erro
-            alert('Produto não adicionado');
+            alert('Sequência não adicionada');
             }
     });
     return false;
@@ -26,7 +26,7 @@
 <div class="main-content col-12" style="padding-left: 10px;">
     <div class="card">
         <div class="card-body bg-dark">
-            <h5 class="card-title m-b-0 text-light"><i class="mdi mdi-pencil"></i>Editar Sequência</h5>
+            <h5 class="card-title m-b-0 text-light"><i class="mdi mdi-pencil"></i>Adicionar Sequência</h5>
         </div>
     </div>
     <div class="card">

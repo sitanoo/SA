@@ -7,7 +7,7 @@
                 <div class="col-12" style="padding-left: 1px;">
                     <div class="card">
                         <div class="card-body bg-dark">
-                            <h5 class="card-title m-b-0 text-light"><i class="mdi mdi-shopping"></i> Operação</h5>
+                            <h5 class="card-title m-b-0 text-light"><i class="mdi mdi-arrow-all"></i> Operação</h5>
                         </div>
                         </div>
                         <table class="table">

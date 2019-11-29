@@ -30,54 +30,62 @@
     return false;
     }
 </script>
-<div class="col-12" style="padding-left: 10px;">
+<div class="col-12">
+
+    <a href="{{route('sequencia.create')}}" type="button" 
+       class="btn btn-success">
+        Adicionar Tomada de Tempo
+    </a>
+    <br/>
+    <br/>
+
     <div class="card">
         <div class="card-body bg-dark">
-            <h5 class="card-title m-b-0 text-light"><i class="mdi mdi-shopping"></i> Usuários</h5>
+            <h5 class="card-title m-b-0 text-light">
+                <i class="mdi mdi-shopping"></i> Usuários</h5>
         </div>
-        <table>
-            <tr>
-                
-            </tr>
-        </table>
         <table class="table">
-            <thead>
-                <th scope="col">Código</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Cod. Ope.</th>
-                <th scope="col">Cod. Prod.</th>
-                <th scope="col">Rítimo</th>
-                <th scope="col">Cont.<th>
-                <th scope="col">Qntd. p/<th>
-                <th scope="col">Qntd. p/ Seg.<th>
-                    <a href="{{route('sequencia.create')}}" type="button" class="btn btn-outline-success">Adicionar Tomada de Tempo</a>
-                </th>
-            </thead>
             <tbody>
+                <tr>
+                    <th scope="col">Código</th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Cod. Ope.</th>
+                    <th scope="col">Cod. Prod.</th>
+                    <th scope="col">Rítimo</th>
+                    <th scope="col">Int</th>
+                    <th scope="col">Cont.</th>
+                    <th scope="col">Qntd. p/</th>
+                    <th scope="col">Qntd. p/ Seq.</th>
+                    <th class="text-center">
+                        Ações
+                    </th>
+                </tr>
 
                 @foreach ($seq as $s)
-                
-                <tr class="text-center" id="linhadel{{$s->SeqCod}}">
-                    <th scope="col">{{$s->SeqCod}}</th>
-                    <th scope="col">{{$s->SeqNom}}</th>
-                    <th scope="col">{{$s->OpCod}}</th>
-                    <th scope="col">{{$s->ProCod}}</th>
-                    <th scope="col">{{$s->SeqRit}}</th>
-                    <th scope="col">{{$s->SeqInt}}</th>
-                    <th scope="col">{{$s->SeqCon}}</th>
-                    <th scope="col">{{$s->SeqQtdVez}}</th>
-                    <th scope="col">{{$s->SeqPorSec}}</th>
 
-                    <th scope="col">
-                        <a href="{{route('sequencia.edit', $s->SeqCod)}}" type="button" class="btn btn-outline-info">Editar</a>
-                    </th>
-                    <th scope="col">
-                        <a href="#" onclick="return delSequencia('del{{$s->SeqCod}}', '{{route('sequencia.destroy', $s->SeqCod)}}')" type="button" class="btn btn-outline-danger">Excluir</a>
+                <tr class="text-center" id="linhadel{{$s->SeqCod}}">
+                    <td scope="col">{{$s->SeqCod}}</td>
+                    <td scope="col">{{$s->SeqNom}}</td>
+                    <td scope="col">{{$s->OpCod}}</td>
+                    <td scope="col">{{$s->ProCod}}</td>
+                    <td scope="col">{{$s->SeqRit}}</td>
+                    <td scope="col">{{$s->SeqInt}}</td>
+                    <td scope="col">{{$s->SeqCon}}</td>
+                    <td scope="col">{{$s->SeqQtdVez}}</td>
+                    <td scope="col">{{$s->SeqPorPec}}</td>
+                    <td class="text-center" scope="col">
+
+                        <a href="{{route('sequencia.edit', $s->SeqCod)}}" 
+                           type="button" class="btn btn-outline-info"><i class="fa fa-pencil-alt"></i></a>
+
+                        <a href="#" onclick="return delSequencia('del{{$s->SeqCod}}', '{{route('sequencia.destroy', $s->SeqCod)}}')" 
+                           type="button" 
+                           class="btn btn-outline-danger"><i class="fa fa-trash-alt"></i></a>
                         <form action="" method="post" id="del{{$s->SeqCod}}">
                             @csrf
                             @method('DELETE')
                         </form>
-                    </th>
+                    </td>
                 </tr>
 
                 @endforeach
