@@ -41,41 +41,41 @@
                 <div class="form-group row">
                     <label for="usunom" class="col-sm-3 text-left control-label col-form-label">Nome</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" name="usuNom" value="">
+                        <input id="usuNom" type="text" class="form-control" name="usuNom" value="">
                     </div>
                 </div>
                 
                 <div class="form-group row">
                     <label for="usuname" class="col-sm-3 text-left control-label col-form-label">Nome da conta</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" name="usuName" value="">
+                        <input id="usuName" type="text" class="form-control" name="usuName" value="">
                     </div>
                 </div>
                 
                 <div class="form-group row">
                     <label for="usutip" class="col-sm-3 text-left control-label col-form-label">Tipo</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" name="UsuTip" value="">
+                        <input id="usuTip" type="text" class="form-control" name="UsuTip" value="">
                     </div>
                 </div>
                 
                 <div class="form-group row">
                     <label for="ususen" class="col-sm-3 text-left control-label col-form-label">Senha</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" name="UsuSen" value="">
+                        <input id="usuSen" type="text" class="form-control" name="UsuSen" value="">
                     </div>
                 </div>
                 
                 <div class="form-group row">
                     <label for="ususenh" class="col-sm-3 text-left control-label col-form-label">Confirmar Senha</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" name="CSenha" value="">
+                        <input id="conSen" type="text" class="form-control" name="CSenha" value="">
                     </div>
                 </div>
                 
                 <div class="border-top">
                     <div class="card-body">
-                        <button type="submit" class="btn btn-success">Adicionar</button>
+                        <button id="adicionar" type="submit" class="btn btn-success">Adicionar</button>
                     </div>
                 </div>
             </div>
