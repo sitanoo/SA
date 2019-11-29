@@ -53,8 +53,8 @@
                         <!-- Logo icon -->
                         <b>
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
-                            <!-- Dark Logo icon -->
-                            <img src="/assets/images/kappa.jpg" style="width: 40px;height: 40px;margin-left: 100px;" />
+                                <!-- Dark Logo icon -->
+                            <img src="{{url('/')}}/assets/images/kappa.jpg" style="width: 40px;height: 40px;margin-left: 100px;" />
                            
                         </b>
                         <!--End Logo icon -->
@@ -209,6 +209,7 @@
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav" class="p-t-30">
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('cronometragem.index') }}" aria-expanded="false"><i class="fa fa-clock"></i><span class="hide-menu ">Cronômetro</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('usuario.index') }}" aria-expanded="false"><i class="mdi mdi-account"></i><span class="hide-menu ">Usuários</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('produto.index') }}" aria-expanded="false"><i class="mdi mdi-shopping"></i><span class="hide-menu">Produtos</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{ route('operacao.index') }}" aria-expanded="false"><i class="mdi mdi-arrow-all"></i><span class="hide-menu">Operações</span></a></li>
@@ -252,35 +253,16 @@
         <!-- ============================================================== -->
         <!-- Page wrapper  -->
         <!-- ============================================================== -->
-        <div class="page-wrapper">
-            <!-- ============================================================== -->
-            <!-- Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
+        <div class="page-wrapper"> 
             
-            <!-- ============================================================== -->
-            <!-- End Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- Container fluid  -->
-            <!-- ============================================================== -->
             <div class="container-fluid">
                     @yield('conteudo');
             </div>    
-            <!-- ============================================================== -->
-            <!-- End Container fluid  -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
+            
             <footer class="footer text-center">
-                Feito por Bruno cotoco, Eduardo Tinti e Ismar Pedrini ©
+                By Bruno & the Plebs. ©
             </footer>
-            <!-- ============================================================== -->
-            <!-- End footer -->
-            <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- End Page wrapper  -->
-        <!-- ============================================================== -->
+            
     </div>
     <!-- ============================================================== -->
     <!-- End Wrapper -->
@@ -311,7 +293,8 @@
     <script src="{{url('/')}}/assets/libs/flot/jquery.flot.crosshair.js"></script>
     <script src="{{url('/')}}/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
     <script src="{{url('/')}}/dist/js/pages/chart/chart-page-init.js"></script>
-
+    <script src="{{url('/')}}/lib/easytimer/dist/easytimer.min.js"></script>
+    <script src="{{url('/')}}/dist/js/easytimer.min.js"></script>
 </body>
 
 </html>

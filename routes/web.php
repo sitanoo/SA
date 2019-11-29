@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'IndexController@index');
+Route::get('/cronometragem', 'CronometragemController@index')->name("cronometragem.index");
 Route::get('/produto', 'ProdutoController@index')->name("produto.index");
 Route::get('/operacao', 'OperacaoController@index')->name("operacao.index");
 Route::get('/usuario', 'UsuarioController@index')->name("usuario.index");
