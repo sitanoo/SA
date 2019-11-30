@@ -32,7 +32,7 @@
 </script>
 <div class="col-12">
 
-    <a href="{{route('sequencia.create')}}" type="button" 
+    <a id="adicionar" href="{{route('sequencia.create')}}" type="button" 
        class="btn btn-success">
         Adicionar Sequência
     </a>
@@ -72,10 +72,10 @@
                     <td scope="col">{{$s->SeqPorPec}}</td>
                     <td class="text-center" scope="col">
 
-                        <a href="{{route('sequencia.edit', $s->SeqCod)}}" 
+                        <a id="editar" href="{{route('sequencia.edit', $s->SeqCod)}}" 
                            type="button" class="btn btn-outline-info"><i class="fa fa-pencil-alt"></i></a>
 
-                        <a href="#" onclick="return delSequencia('del{{$s->SeqCod}}', '{{route('sequencia.destroy', $s->SeqCod)}}')" 
+                        <a id="excluir" href="#" onclick="return delSequencia('del{{$s->SeqCod}}', '{{route('sequencia.destroy', $s->SeqCod)}}')" 
                            type="button" 
                            class="btn btn-outline-danger"><i class="fa fa-trash-alt"></i></a>
                         <form action="" method="post" id="del{{$s->SeqCod}}">
