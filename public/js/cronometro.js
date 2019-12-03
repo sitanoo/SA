@@ -6,7 +6,15 @@ window.onload = function () {
     document.cron.continua.onclick = continuar;
     document.cron.reinicia.onclick = reiniciar;
     document.cron.proximo.onclick = capturarTempo;
+    
 }
+
+
+//obtem a tomada de tempo e os elementos
+getTomadaTempo(1);
+getSequencias(1);
+
+
 //variables de inicio:
 var marcha = 0; //control del temporizador
 var cro = 0; //estado inicial del cronómetro.
@@ -69,19 +77,29 @@ function reiniciar() {
 }
 
 var contadorCaptura = 0;
+var contadorElemento = 0;
 function capturarTempo() {
-    contadorCaptura++;
+    
+    //verifica se precisa zerar o contador de elementos
+    
+    if(contadorElemento == sequencia.length){
+        contadorElemento = 0;
+    }
+    
     parar();
-    tempoCapturado = $('#reloj').html();
+     tempoCapturado = $('#reloj').html();
+    contadorCaptura++;
+    
+   
     reiniciar();
     empezar();
 
-    elemento = "Elemento de teste";
+    sequencia = sequencia[contadorElemento];
 
     //Cria uma nova linha da tabela
     linha = "<tr>\n\
             <td>" + contadorCaptura + "</td>\n\
-            <td>" + elemento + "</td>\n\
+            <td>" + sequencia.EleNom + "</td>\n\
             <td>" + tempoCapturado + "</td>\n\
             </tr>";
 
@@ -90,6 +108,7 @@ function capturarTempo() {
 
     //Envia via AJAX para o servidor
     console.log("Cronômetro " + contadorCaptura + ": " + tempoCapturado);
+    contadorElemento ++;
 }
 
 var tomadaTempo = null;
