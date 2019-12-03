@@ -44,7 +44,7 @@
                     <th scope="col">Nome da Conta</th>
                     <th scope="col">Tipo</th>
                     <th scope="col">
-                        <a href="{{route('usuario.create')}}" type="button" class="btn btn-outline-success">Adicionar Usuário</a>
+                        <a href="{{route('usuario.create')}}" type="button" id="adicionar" class="btn btn-outline-success">Adicionar Usuário</a>
                     </th>
                     <th scope="col"></th>
                 </tr>
@@ -59,10 +59,10 @@
                     <th scope="col">{{$u->UsuName}}</th>
                     <th scope="col">{{$u->UsuTip}}</th>
                     <th scope="col">
-                        <a href="{{route('usuario.edit', $u->UsuCod)}}" type="button" class="btn btn-outline-info">Editar</a>
+                        <a href="{{route('usuario.edit', $u->UsuCod)}}" type="button" id="editar" class="btn btn-outline-info">Editar</a>
                     </th>
                     <th scope="col">
-                        <a href="#" onclick="return delProduto('del{{$u->UsuCod}}', '{{route('usuario.destroy', $u->UsuCod)}}')" type="button" class="btn btn-outline-danger">Excluir</a>
+                        <a href="#" onclick="return delProduto('del{{$u->UsuCod}}', '{{route('usuario.destroy', $u->UsuCod)}}')" type="button" id="excluir" class="btn btn-outline-danger">Excluir</a>
                         <form action="" method="post" id="del{{$u->UsuCod}}">
                             @csrf
                             @method('DELETE')

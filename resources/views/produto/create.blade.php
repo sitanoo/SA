@@ -41,12 +41,12 @@
                 <div class="form-group row">
                     <label for="nompro" class="col-sm-3 text-left control-label col-form-label">Nome do Produto</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" name="ProNom" value="">
+                        <input id="proNom" type="text" class="form-control" name="ProNom" value="">
                     </div>
                 </div>
                 <div class="border-top">
                     <div class="card-body">
-                        <button type="submit" class="btn btn-success">Adicionar</button>
+                        <button id="adicionar" type="submit" class="btn btn-success">Adicionar</button>
                     </div>
                 </div>
             </div>

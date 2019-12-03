@@ -41,34 +41,34 @@
                 <div class="form-group row">
                     <label for="usutip" class="col-sm-3 text-left control-label col-form-label">Tipo de usuário</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" name="usuTip" value="{{$usuario->UsuTip}}">
+                        <input id="usuTip" type="text" class="form-control" name="usuTip" value="{{$usuario->UsuTip}}">
                     </div>
                 </div>
                 
                 <div class="form-group row">
                     <label for="usuname" class="col-sm-3 text-left control-label col-form-label">Nome da Conta</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" name="usuName" value="{{$usuario->UsuName}}">
+                        <input id="usuName" type="text" class="form-control" name="usuName" value="{{$usuario->UsuName}}">
                     </div>
                 </div>
                 
                 <div class="form-group row">
                     <label for="usunom" class="col-sm-3 text-left control-label col-form-label">Nome</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" name="usuNom" value="{{$usuario->UsuNom}}">
+                        <input id="usuNom" type="text" class="form-control" name="usuNom" value="{{$usuario->UsuNom}}">
                     </div>
                 </div>
                 
                 <div class="form-group row">
                     <label for="ususen" class="col-sm-3 text-left control-label col-form-label">Senha</label>
                     <div class="col-sm-9">
-                        <input type="password" class="form-control" name="usuSen" value="{{$usuario->UsuSen}}">
+                        <input id="usuSen" type="password" class="form-control" name="usuSen" value="{{$usuario->UsuSen}}">
                     </div>
                 </div>
                 
                 <div class="border-top">
                     <div class="card-body">
-                        <button type="submit" class="btn btn-success">Editar</button>
+                        <button id="editar" type="submit" class="btn btn-success">Editar</button>
                     </div>
                 </div>
             </div>
