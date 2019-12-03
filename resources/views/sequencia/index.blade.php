@@ -33,7 +33,7 @@
 <div class="col-12">
 
     <a id="adicionar" href="{{route('sequencia.create')}}" type="button" 
-       class="btn btn-success">
+       class="btn btn-outline-success">
         Adicionar Sequência
     </a>
     <br/>

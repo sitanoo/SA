@@ -16,7 +16,7 @@
             dataType: 'html',
             success: function (data) {
             //Mensagem de sucesso
-            
+
             $('#linha' + id).remove();
             },
             error: function (argument){
@@ -31,7 +31,11 @@
 </script>
 
 
-<div class="main-content col-12" style="padding-left: 10px;">
+<div class="col-12">
+    <a href="{{route('usuario.create')}}" type="button" id="adicionar" class="btn btn-outline-success">Adicionar Usuário</a>
+
+    <br/>
+    <br/> 
     <div class="card">
         <div class="card-body bg-dark">
             <h5 class="card-title m-b-0 text-light"><i class="mdi mdi-account"></i> Usuários</h5>
@@ -43,15 +47,11 @@
                     <th scope="col">Nome</th>
                     <th scope="col">Nome da Conta</th>
                     <th scope="col">Tipo</th>
-                    <th scope="col">
-                        <a href="{{route('usuario.create')}}" type="button" id="adicionar" class="btn btn-outline-success">Adicionar Usuário</a>
-                    </th>
-                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
 
-                 @foreach ($usuario as $u)
+                @foreach ($usuario as $u)
 
                 <tr id="linhadel{{$u->UsuCod}}">
                     <th scope="col">{{$u->UsuCod}}</th>
