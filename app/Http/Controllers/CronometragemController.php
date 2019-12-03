@@ -27,15 +27,15 @@ class CronometragemController extends Controller
     
     public function guardar(Request $request){
         $cronometragem = new \App\Cronometragem();
-        $cronometragem->CroCod = $request->get('CroCod');
+        $cronometragem->CroCod = $_GET('CroCod');
         
-        $cronometragem->TomCod = $request->get('TomCod');
+        $cronometragem->TomCod = $_GET('TomCod');
         
-        $cronometragem->SeqCod = $request->get('SeqCod');
+        $cronometragem->SeqCod = $_GET('SeqCod');
         
-        $cronometragem->SeqCod = $request->get('SeqCod');
         
-        $tempo = $request->get('CroTem');
+        
+        $tempo = $_GET('CroTem');
         $tempo = str_replace(' ','', $tempo);
         
         $cronometragem->CroTem = $tempo;
