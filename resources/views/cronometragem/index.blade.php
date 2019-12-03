@@ -2,6 +2,7 @@
 @section('conteudo')
 <!-- Conteúdo  -->
 
+
 <script>
     var timer = new easytimer.Timer();
     timer.start();
