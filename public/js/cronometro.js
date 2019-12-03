@@ -117,6 +117,7 @@ function capturarTempo() {
     }
 }
 
+
 var tomadaTempo = null;
 function getTomadaTempo(codTomadaTempo) {
     $.ajax({
