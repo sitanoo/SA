@@ -50,7 +50,7 @@
                     <th scope="col">Nome Operação</th>
                     <th scope="col">Código Produto</th>
                     <th scope="col">Maquina de operação</th>
-                    <th scope="col">*Tempo operação*</th>
+                    <th scope="col">Cronometragem</th>
                 </tr>
             </thead>
             <tbody>
@@ -65,7 +65,7 @@
                     <th scope="col">{{$o->OpCron}}</th>
                     <th class="text-center" scope="col">
                         
-                        <a href="{{route('operacao.edit', $o->ProCod)}}" 
+                        <a href="{{route('operacao.edit', $o->OpCod)}}" 
                            type="button" class="btn btn-outline-info"><i class="fa fa-pencil-alt"></i></a>
                         <a href="" onclick="return delOperacao('del{{$o->OpCod}}', '{{route('operacao.destroy', $o->OpCod)}}')" 
                            type="button" class="btn btn-outline-danger"><i class="fa fa-trash-alt"></i></a>

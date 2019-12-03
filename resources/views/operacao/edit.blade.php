@@ -37,7 +37,7 @@
                 <div class="form-group row">
                     <label for="ProCod" class="col-sm-3 text-left control-label col-form-label">Código do Produto</label>
                     <div class="col-sm-9">
-                        <input name="ProCod" type="text" class="form-control" required value="{{$operacao->OpCod}}">
+                        <input name="ProCod" type="text" class="form-control" required value="{{$operacao->ProCod}}">
                     </div>
                 </div>
                 <div class="form-group row">

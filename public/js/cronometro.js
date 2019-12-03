@@ -6,7 +6,7 @@ window.onload = function () {
     document.cron.continua.onclick = continuar;
     document.cron.reinicia.onclick = reiniciar;
     document.cron.proximo.onclick = capturarTempo;
-    
+
 }
 
 
@@ -79,27 +79,27 @@ function reiniciar() {
 var contadorCaptura = 0;
 var contadorElemento = 0;
 function capturarTempo() {
-    
+
     //verifica se precisa zerar o contador de elementos
-    
-    if(contadorElemento == sequencia.length){
+    console.log(sequencia.length);
+    if (contadorElemento == sequencia.length) {
         contadorElemento = 0;
     }
-    
+
     parar();
-     tempoCapturado = $('#reloj').html();
+    tempoCapturado = $('#reloj').html();
     contadorCaptura++;
-    
-   
+
+
     reiniciar();
     empezar();
 
-    sequencia = sequencia[contadorElemento];
+    elemento = sequencia[contadorElemento];
 
     //Cria uma nova linha da tabela
     linha = "<tr>\n\
             <td>" + contadorCaptura + "</td>\n\
-            <td>" + sequencia.EleNom + "</td>\n\
+            <td>" + sequencia.SeqNom + "</td>\n\
             <td>" + tempoCapturado + "</td>\n\
             </tr>";
 
@@ -108,7 +108,13 @@ function capturarTempo() {
 
     //Envia via AJAX para o servidor
     console.log("Cronômetro " + contadorCaptura + ": " + tempoCapturado);
-    contadorElemento ++;
+    contadorElemento++;
+    
+    //encerre o cronometro
+    if(contadorCaptura >= (sequencia.length * tomadaTempo.TomNumLei)){
+        parar();
+        $('#proximo').attr('disabled', 'true');
+    }
 }
 
 var tomadaTempo = null;
@@ -119,9 +125,9 @@ function getTomadaTempo(codTomadaTempo) {
         data: 'cod=' + codTomadaTempo,
         dataType: 'json',
         success: function (data) {
-          
-            
-           tomadaTempo = data;
+
+
+            tomadaTempo = data;
         },
         error: function (argument) {
             //Mensagem de erro
@@ -130,7 +136,7 @@ function getTomadaTempo(codTomadaTempo) {
     });
 }
 
-var sequencia = null;
+var sequencia = [];
 function getSequencias(codOperacao) {
     $.ajax({
         method: 'get',
@@ -138,9 +144,7 @@ function getSequencias(codOperacao) {
         data: 'cod=' + codOperacao,
         dataType: 'json',
         success: function (data) {
-          
-            
-           sequencia = data;
+            sequencia = data;
         },
         error: function (argument) {
             //Mensagem de erro
