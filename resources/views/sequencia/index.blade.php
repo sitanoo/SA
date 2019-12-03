@@ -1,8 +1,6 @@
 @extends('layout')
 @section('conteudo')
 
-
-
 <script>
 
     function delSequencia(id, url){
@@ -45,7 +43,7 @@
                 <i class="mdi mdi-shopping"></i> Usuários</h5>
         </div>
         <table class="table">
-            <tbody>
+            <thead>
                 <tr>
                     <th scope="col">Código</th>
                     <th scope="col">Nome</th>
@@ -57,7 +55,8 @@
                     <th scope="col">Qntd. p/</th>
                     <th scope="col">Qntd. p/ Seq.</th>
                 </tr>
-
+            </thead>
+            <tbody>
                 @foreach ($seq as $s)
 
                 <tr id="linhadel{{$s->SeqCod}}">
@@ -91,9 +90,4 @@
         </table>
     </div>
 </div>
-
-
-
-
-
 @stop

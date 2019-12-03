@@ -1,7 +1,5 @@
 @extends('layout')
 @section('conteudo')
-<!-- Conteúdo  -->
-
 
 <script>
                     
@@ -76,4 +74,3 @@
     </div>
 </div>
 @stop
-<!-- Fim Conteúdo  -->

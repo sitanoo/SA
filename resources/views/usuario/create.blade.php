@@ -41,35 +41,35 @@
                 <div class="form-group row">
                     <label for="usunom" class="col-sm-3 text-left control-label col-form-label">Nome</label>
                     <div class="col-sm-9">
-                        <input id="usuNom" type="text" class="form-control" name="usuNom" value="">
+                        <input id="usuNom" type="text" class="form-control" name="usuNom" value="" required>
                     </div>
                 </div>
                 
                 <div class="form-group row">
                     <label for="usuname" class="col-sm-3 text-left control-label col-form-label">Nome da conta</label>
                     <div class="col-sm-9">
-                        <input id="usuName" type="text" class="form-control" name="usuName" value="">
+                        <input id="usuName" type="text" class="form-control" name="usuName" value="" required>
                     </div>
                 </div>
                 
                 <div class="form-group row">
                     <label for="usutip" class="col-sm-3 text-left control-label col-form-label">Tipo</label>
                     <div class="col-sm-9">
-                        <input id="usuTip" type="text" class="form-control" name="UsuTip" value="">
+                        <input id="usuTip" type="text" class="form-control" name="UsuTip" value="" required>
                     </div>
                 </div>
                 
                 <div class="form-group row">
                     <label for="ususen" class="col-sm-3 text-left control-label col-form-label">Senha</label>
                     <div class="col-sm-9">
-                        <input id="usuSen" type="text" class="form-control" name="UsuSen" value="">
+                        <input id="usuSen" type="text" class="form-control" name="UsuSen" value="" required>
                     </div>
                 </div>
                 
                 <div class="form-group row">
                     <label for="ususenh" class="col-sm-3 text-left control-label col-form-label">Confirmar Senha</label>
                     <div class="col-sm-9">
-                        <input id="conSen" type="text" class="form-control" name="CSenha" value="">
+                        <input id="conSen" type="text" class="form-control" name="CSenha" value="" required>
                     </div>
                 </div>
                 
