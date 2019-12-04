@@ -50,7 +50,7 @@ ENGINE = InnoDB;
 -- Table `laravel`.`Sequência`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `laravel`.`Sequencia` (
-  `SeqCod` INT NOT NULL,
+  `SeqCod` INT NOT NULL AUTO_INCREMENT,
   `SeqNom` VARCHAR(45) NOT NULL,
   `OpCod` INT NOT NULL,
   `ProCod` INT NOT NULL,
@@ -65,11 +65,6 @@ CREATE TABLE IF NOT EXISTS `laravel`.`Sequencia` (
   CONSTRAINT `fk_Sequencia_Operacao`
     FOREIGN KEY (`OpCod`)
     REFERENCES `laravel`.`Operacao` (`OpCod`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-	CONSTRAINT `fk_Sequencia_Produto`
-    FOREIGN KEY (`ProCod`)
-    REFERENCES `laravel`.`Produto` (`ProCod`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -102,8 +97,8 @@ ENGINE = InnoDB;
 -- Table `laravel`.`Cronometragem`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `laravel`.`Cronometragem` (
-  `CroCod` INT NOT NULL AUTO_INCREMENT,
-  `CroTem` DOUBLE NOT NULL,
+  `CroCod` INT NOT NULL,
+  `CroTem` VARCHAR(11) NOT NULL,
   `CroCronNom` VARCHAR(45) NOT NULL,
   `TomCod` INT NOT NULL,
   `Tomada_Tempo_OpCod` INT NOT NULL,
@@ -121,6 +116,11 @@ CREATE TABLE IF NOT EXISTS `laravel`.`Cronometragem` (
   CONSTRAINT `fk_Cronometragem_Sequencia1`
     FOREIGN KEY (`SeqCod`)
     REFERENCES `laravel`.`Sequencia` (`SeqCod`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+CONSTRAINT `fk_Cronometragem_Produto`
+    FOREIGN KEY (`ProCod`)
+    REFERENCES `laravel`.`Produto` (`ProCod`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
