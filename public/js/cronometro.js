@@ -100,9 +100,9 @@ function getTomadaTempo(codTomadaTempo) {
         data: 'cod=' + codTomadaTempo,
         dataType: 'json',
         success: function (data) {
-          
-            
-           tomadaTempo = data;
+
+
+            tomadaTempo = data;
         },
         error: function (argument) {
             //Mensagem de erro
@@ -119,9 +119,9 @@ function getSequencias(codOperacao) {
         data: 'cod=' + codOperacao,
         dataType: 'json',
         success: function (data) {
-          
-            
-           sequencia = data;
+
+
+            sequencia = data;
         },
         error: function (argument) {
             //Mensagem de erro
