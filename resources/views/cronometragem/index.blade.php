@@ -2,10 +2,6 @@
 @section('conteudo')
 <!-- Conteúdo  -->
 
-<title>Cronómetro</title> 
-
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-
 <style type="text/css">
     * { margin: auto; padding: 0; }
     h1 { padding: 0.5em; text-align: center; }
@@ -19,9 +15,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="js/cronometro.js" type="text/javascript"></script>
 
-<h1>CRONOMETRO com Javascript</h1>
-
-<div id="cronometro">
+<div
+    id="cronometro">
     <div id="reloj">00 : 00 : 00</div>
     <br/>
     <form name="cron" action="#">
@@ -35,4 +30,5 @@
         <input type="button" value="Próximo >>" name="proximo" />
 
     </form>
+</div>
     @stop    
