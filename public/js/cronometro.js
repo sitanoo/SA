@@ -6,14 +6,12 @@ window.onload = function () {
     document.cron.continua.onclick = continuar;
     document.cron.reinicia.onclick = reiniciar;
     document.cron.proximo.onclick = capturarTempo;
-    
+
     //obtem a tomada de tempo e os elementos
 getTomadaTempo(1);
 getSequencias(1);
 
 }
-
-
 
 
 
