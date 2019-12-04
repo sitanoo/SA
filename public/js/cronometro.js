@@ -6,12 +6,13 @@ window.onload = function () {
     document.cron.continua.onclick = continuar;
     document.cron.reinicia.onclick = reiniciar;
     document.cron.proximo.onclick = capturarTempo;
-    
-}
 
-//obtem a tomada de tempo e os elementos
+    //obtem a tomada de tempo e os elementos
 getTomadaTempo(1);
 getSequencias(1);
+
+}
+
 
 
 //variables de inicio:
@@ -107,6 +108,9 @@ function capturarTempo() {
 
     //Envia via AJAX para o servidor
     console.log("Cronômetro " + contadorCaptura + ": " + tempoCapturado);
+    
+    registrarTempo(contadorCaptura, tomadaTempo.TomCod, sequencia.SeqCod, tempoCapturado);
+    
     contadorElemento++;
     
     //encerre o cronometro
@@ -114,6 +118,22 @@ function capturarTempo() {
         parar();
         $('#proximo').attr('disabled', 'true');
     }
+}
+
+function registrarTempo(croCodigo, tomCodigo, codSequencia, tempoCronometro){
+    $.ajax({
+        method: 'get',
+        url: '/cronometragem/guardar',
+        data: 'CroCod='+croCodigo+'&TomCod'+tomCodigo+'&SeqCod=+'+codSequencia+'&CroTem=+'+tempoCronometro,
+        dataType: 'json',
+        success: function (data) {
+            console.log('Leitura armazenada -'+croCodigo);
+        },
+        error: function (argument) {
+            //Mensagem de erro
+            alert('Falha ao obter dados.');
+        }
+    });
 }
 
 
