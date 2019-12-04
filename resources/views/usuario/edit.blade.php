@@ -41,28 +41,28 @@
                 <div class="form-group row">
                     <label for="usutip" class="col-sm-3 text-left control-label col-form-label">Tipo de usuário</label>
                     <div class="col-sm-9">
-                        <input id="usuTip" type="text" class="form-control" name="usuTip" value="{{$usuario->UsuTip}}">
+                        <input id="usuTip" type="text" class="form-control" name="usuTip" value="{{$usuario->UsuTip}}" required>
                     </div>
                 </div>
                 
                 <div class="form-group row">
                     <label for="usuname" class="col-sm-3 text-left control-label col-form-label">Nome da Conta</label>
                     <div class="col-sm-9">
-                        <input id="usuName" type="text" class="form-control" name="usuName" value="{{$usuario->UsuName}}">
+                        <input id="usuName" type="text" class="form-control" name="usuName" value="{{$usuario->UsuName}}" required>
                     </div>
                 </div>
                 
                 <div class="form-group row">
                     <label for="usunom" class="col-sm-3 text-left control-label col-form-label">Nome</label>
                     <div class="col-sm-9">
-                        <input id="usuNom" type="text" class="form-control" name="usuNom" value="{{$usuario->UsuNom}}">
+                        <input id="usuNom" type="text" class="form-control" name="usuNom" value="{{$usuario->UsuNom}}" required>
                     </div>
                 </div>
                 
                 <div class="form-group row">
                     <label for="ususen" class="col-sm-3 text-left control-label col-form-label">Senha</label>
                     <div class="col-sm-9">
-                        <input id="usuSen" type="password" class="form-control" name="usuSen" value="{{$usuario->UsuSen}}">
+                        <input id="usuSen" type="password" class="form-control" name="usuSen" value="{{$usuario->UsuSen}}" required>
                     </div>
                 </div>
                 

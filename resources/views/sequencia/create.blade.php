@@ -53,42 +53,42 @@
                 <div class="form-group row">
                     <label for="ProCod" class="col-sm-3 text-left control-label col-form-label">Código produto</label>
                     <div class="col-sm-9">
-                        <input id="proCod" type="text" name="ProCod" name="ProCod">
+                        <input id="proCod" type="text" name="ProCod" name="ProCod" required>
                     </div>
                 </div>
                 
                 <div class="form-group row">
                     <label for="SeqRit" class="col-sm-3 text-left control-label col-form-label">Ritimo</label>
                     <div class="col-sm-9">
-                        <input id="seqRit" type="text"  name="SeqRit" name="SeqRit">
+                        <input id="seqRit" type="text"  name="SeqRit" name="SeqRit" required>
                     </div>
                 </div>
                 
                 <div class="form-group row">
                     <label for="SeqCon" class="col-sm-3 text-left control-label col-form-label">Sequência Con.</label>
                     <div class="col-sm-9">
-                        <input id="seqCon" type="text" name="SeqCon" name="SeqCon">
+                        <input id="seqCon" type="text" name="SeqCon" name="SeqCon" required>
                     </div>
                 </div>
                 
                 <div class="form-group row">
                     <label for="SeqQtdVez" class="col-sm-3 text-left control-label col-form-label">Quantidade de vezes</label>
                     <div class="col-sm-9">
-                    <input id="seqQtdVez" type="text"  name="SeqQtdVez" name="SeqQtdVez">
+                    <input id="seqQtdVez" type="text"  name="SeqQtdVez" name="SeqQtdVez" required>
                     </div>
                 </div>
                 
                 <div class="form-group row">
                     <label for="SeqInt" class="col-sm-3 text-left control-label col-form-label">Intervalo de Sequência</label>
                     <div class="col-sm-9">
-                        <input id="seqNom" type="text"  name="SeqInt" name="SeqInt">
+                        <input id="seqNom" type="text"  name="SeqInt" name="SeqInt" required>
                     </div>
                 </div>
                 
                 <div class="form-group row">
                     <label for="SeqInt" class="col-sm-3 text-left control-label col-form-label">Sequência por peça</label>
                     <div class="col-sm-9">
-                        <input id="seqPorPec" type="text"  name="SeqPorPec">
+                        <input id="seqPorPec" type="text"  name="SeqPorPec" required>
                     </div>
                 </div>
                 

@@ -37,7 +37,7 @@
                 <div class="form-group row">
                     <label for="nompro" class="col-sm-3 text-left control-label col-form-label">Nome do Produto</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" name="ProNom" value="{{$produto->ProNom}}">
+                        <input type="text" class="form-control" name="ProNom" value="{{$produto->ProNom}}" required>
                     </div>
                 </div>
                 <div class="border-top">
