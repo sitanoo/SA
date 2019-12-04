@@ -75,19 +75,57 @@ function capturarTempo() {
     tempoCapturado = $('#reloj').html();
     reiniciar();
     empezar();
-    
+
     elemento = "Elemento de teste";
-    
+
     //Cria uma nova linha da tabela
     linha = "<tr>\n\
-            <td>"+contadorCaptura+"</td>\n\
-            <td>"+elemento+"</td>\n\
-            <td>"+tempoCapturado+"</td>\n\
+            <td>" + contadorCaptura + "</td>\n\
+            <td>" + elemento + "</td>\n\
+            <td>" + tempoCapturado + "</td>\n\
             </tr>";
-    
+
     //Plota na tabela
     $('#corpoTabela').append(linha);
-    
+
     //Envia via AJAX para o servidor
-    console.log("Cronômetro "+contadorCaptura+": "+tempoCapturado);
+    console.log("Cronômetro " + contadorCaptura + ": " + tempoCapturado);
+}
+
+var tomadaTempo = null;
+function getTomadaTempo(codTomadaTempo) {
+    $.ajax({
+        method: 'get',
+        url: '/cronometragem/get-tomada-tempo',
+        data: 'cod=' + codTomadaTempo,
+        dataType: 'json',
+        success: function (data) {
+          
+            
+           tomadaTempo = data;
+        },
+        error: function (argument) {
+            //Mensagem de erro
+            alert('Falha ao obter dados.');
+        }
+    });
+}
+
+var sequencia = null;
+function getSequencias(codOperacao) {
+    $.ajax({
+        method: 'get',
+        url: '/cronometragem/get-sequencia',
+        data: 'cod=' + codOperacao,
+        dataType: 'json',
+        success: function (data) {
+          
+            
+           sequencia = data;
+        },
+        error: function (argument) {
+            //Mensagem de erro
+            alert('Falha ao obter dados.');
+        }
+    });
 }

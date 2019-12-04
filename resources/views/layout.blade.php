@@ -295,6 +295,7 @@
     <script src="{{url('/')}}/dist/js/pages/chart/chart-page-init.js"></script>
     <script src="{{url('/')}}/lib/easytimer/dist/easytimer.min.js"></script>
     <script src="{{url('/')}}/dist/js/easytimer.min.js"></script>
+    <script src="{{url('/')}}/js/cronometro.js"></script>
 </body>
 
 </html>
