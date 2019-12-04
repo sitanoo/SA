@@ -94,7 +94,7 @@
                 
                 <div class="border-top">
                     <div class="card-body">
-                        <button id="editar" type="submit" class="btn btn-success">Editar</button>
+                        <button id="editar" type="submit" class="btn btn-success">Criar</button>
                     </div>
                 </div>
             </div>

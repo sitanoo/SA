@@ -260,7 +260,7 @@
             </div>    
             
             <footer class="footer text-center">
-                By Bruno & the Plebs. ©
+                By Bruno viado & the Plebs. ©
             </footer>
             
     </div>
