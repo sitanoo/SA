@@ -6,6 +6,9 @@ window.onload = function () {
     document.cron.continua.onclick = continuar;
     document.cron.reinicia.onclick = reiniciar;
     document.cron.proximo.onclick = capturarTempo;
+    
+    getTomadaTempo(1);
+    getElementos(1);
 }
 //variables de inicio:
 var marcha = 0; //control del temporizador
