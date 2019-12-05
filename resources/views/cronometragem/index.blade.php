@@ -28,7 +28,21 @@
         <br/><br/>
 
         <input type="button" value="Próximo >>" id="proximo" name="proximo" />
-
-    </form>
+        
+        <br/><br/>
+        
+        <table width="60%" border="1">
+        <thead>
+            <tr>
+                <td>N° Cronômetro</td>
+                <td>Sequência</td>
+                <td>Tempo</td>
+            </tr>
+        </thead>
+        
+        <tbody id="corpoTabela"></tbody>
+        
+        
+    </table>
 </div>
 @stop    

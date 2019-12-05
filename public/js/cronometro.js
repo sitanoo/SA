@@ -89,8 +89,6 @@ function capturarTempo() {
     parar();
     tempoCapturado = $('#reloj').html();
     contadorCaptura++;
-
-
     reiniciar();
     empezar();
 
@@ -99,7 +97,7 @@ function capturarTempo() {
     //Cria uma nova linha da tabela
     linha = "<tr>\n\
             <td>" + contadorCaptura + "</td>\n\
-            <td>" + sequencia.SeqNom + "</td>\n\
+            <td>" + elemento.SeqNom + "</td>\n\
             <td>" + tempoCapturado + "</td>\n\
             </tr>";
 
@@ -109,7 +107,7 @@ function capturarTempo() {
     //Envia via AJAX para o servidor
     console.log("Cronômetro " + contadorCaptura + ": " + tempoCapturado);
     
-    registrarTempo(contadorCaptura, tomadaTempo.TomCod, sequencia.SeqCod, tempoCapturado);
+    registrarTempo(contadorCaptura, tomadaTempo.TomCod, elemento.SeqCod, tempoCapturado);
     
     contadorElemento++;
     
@@ -124,10 +122,10 @@ function registrarTempo(croCodigo, tomCodigo, codSequencia, tempoCronometro){
     $.ajax({
         method: 'get',
         url: '/cronometragem/guardar',
-        data: 'CroCod='+croCodigo+'&TomCod'+tomCodigo+'&SeqCod=+'+codSequencia+'&CroTem=+'+tempoCronometro,
+        data: 'CroCod='+croCodigo+'&TomCod='+tomCodigo+'&SeqCod=+'+codSequencia+'&CroTem=+'+tempoCronometro,
         dataType: 'json',
         success: function (data) {
-            console.log('Leitura armazenada -'+croCodigo);
+            console.log('Leitura armazenada - '+croCodigo);
         },
         error: function (argument) {
             //Mensagem de erro
