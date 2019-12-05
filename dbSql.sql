@@ -99,12 +99,8 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `laravel`.`Cronometragem` (
   `CroCod` INT NOT NULL,
   `CroTem` VARCHAR(11) NOT NULL,
-  `CroCronNom` VARCHAR(45) NOT NULL,
   `TomCod` INT NOT NULL,
-  `Tomada_Tempo_OpCod` INT NOT NULL,
   `SeqCod` INT NOT NULL,
-  `ProCod` INT NOT NULL,
-  `OpCod` INT NOT NULL,
   `created_at` DATETIME,
   `updated_at` DATETIME,
   PRIMARY KEY (`CroCod`),
@@ -116,11 +112,6 @@ CREATE TABLE IF NOT EXISTS `laravel`.`Cronometragem` (
   CONSTRAINT `fk_Cronometragem_Sequencia1`
     FOREIGN KEY (`SeqCod`)
     REFERENCES `laravel`.`Sequencia` (`SeqCod`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-CONSTRAINT `fk_Cronometragem_Produto`
-    FOREIGN KEY (`ProCod`)
-    REFERENCES `laravel`.`Produto` (`ProCod`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
